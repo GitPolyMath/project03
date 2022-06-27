@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Seoul Tourism</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="title">Seoul Tourism</a>
+				<nav>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/#one" class="active">여행테마 소개</a></li>
+						<li><a href="/#two" class="active">여행패키지 소개</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Seoul Tourism 추천여행지</h1>
+							<h2>여행 &nbsp&nbsp&nbsp&nbsp테마: {{themaname}}</h4>
+							<h2>여행 패키지: {{coursename}}</h4><br>
+							<center>
+							{% if spot_list == [] %}
+							<h3>해당 여행 테마와 패키지로는 추천할만한 여행지가 없습니다.<br>
+								다시 입력해주시기 바랍니다. <br><br><br>
+							<img src="../static/img/apologize.png" alt="" />
+							</h3>
+							{% else %}
+							{% for spot in spot_list %}
+							<li><strong>{{spot}}</strong></li><br>
+							{% endfor %}
+							<img src="../static/img/result.png" alt="" />
+							{% endif %}
+							</center>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>해당 프로젝트는 코드스테이츠 AI부트캠프를 통해 진행되었습니다.</li><br>
+						<li>기상청, 공공데이터포털 API를 통해 데이터파이프라인 및 머신러닝 모델을 구축했습니다.</li><br>
+						<li>&copy; Seoul Tourism. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>
